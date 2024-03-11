@@ -1,16 +1,7 @@
 gt:
 	git add .
-	git commit -m "commit"
-	git push origin
+	git commit -m 'commit'
+	git push
 
-gtc:
-	git pull --no-ff
-	make gt
-
-gm:
-	git switch main
-	git pull
-
-gmc:
-	make gm
-	git checkout -
+publish:
+	yarn version --patch && npm i && npm run build && make gt && npm publish

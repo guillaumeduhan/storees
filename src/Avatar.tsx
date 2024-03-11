@@ -4,6 +4,7 @@ export interface AvatarProps {
   gradient?: string,
   name?: string,
   seen?: boolean,
+  status?: boolean,
   small?: boolean,
 }
 
@@ -13,6 +14,7 @@ function Avatar({
   gradient = "linear-gradient(145deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
   name,
   seen,
+  status,
   small
 }: AvatarProps) {
 
@@ -31,12 +33,12 @@ function Avatar({
 
   const getSize = (isGradient = false) => {
     if (isGradient) return small ? '42px' : '54px'
-    return small ? '36px' : '48px'
+    return small ? '36px' : '50px'
   }
 
   return (
     <div style={{
-      background: seen ? '#ccc' : gradient,
+      background: !status ? '' : seen ? '#ccc' : gradient,
       padding: '3px',
       width: getSize(true),
       height: getSize(true),
@@ -44,7 +46,7 @@ function Avatar({
     }}>
       <div style={{
         backgroundImage: `url(${avatarUrl})`,
-        border: '3px solid white',
+        border: '2px solid white',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
