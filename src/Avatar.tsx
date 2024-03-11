@@ -1,16 +1,20 @@
+export interface AvatarProps {
+  avatarUrl?: string,
+  color?: string,
+  gradient?: string,
+  name?: string,
+  seen?: boolean,
+  small?: boolean,
+}
+
 function Avatar({
   avatarUrl,
   color = "#3b82f6",
   gradient = "linear-gradient(145deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
   name,
+  seen,
   small
-}: {
-  avatarUrl?: string,
-  color?: string,
-  gradient?: string,
-  name?: string,
-  small?: boolean,
-}) {
+}: AvatarProps) {
 
   const getInitials = () => {
     if (avatarUrl) return;
@@ -32,7 +36,7 @@ function Avatar({
 
   return (
     <div style={{
-      background: gradient,
+      background: seen ? '#ccc' : gradient,
       padding: '3px',
       width: getSize(true),
       height: getSize(true),
