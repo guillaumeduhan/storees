@@ -1,7 +1,7 @@
 {
   "name": "storees",
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./build/index.umd.js",
   "module": "./build/index.es.js",
   "exports": {
@@ -24,7 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.71.1",
-    "storees": "0.0.4"
+    "storees": "0.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
