@@ -1459,6 +1459,16 @@ storees@^0.0.2:
     sass "^1.71.1"
     storees "^0.0.1"
 
+storees@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/storees/-/storees-0.0.4.tgz"
+  integrity sha512-03wlvPMoRfKy6+dIMgKHTZdm53sc28p7/EJsUMBOOEEZfo2wZFJM1ZBucRnNBm3xvhoqgQiW+ylpGg5/mz6r2w==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    sass "^1.71.1"
+    storees "^0.0.2"
+
 strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
