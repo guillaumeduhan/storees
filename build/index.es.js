@@ -10,11 +10,11 @@ var k = { exports: {} }, f = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var v;
+var R;
 function I() {
-  if (v)
+  if (R)
     return f;
-  v = 1;
+  R = 1;
   var a = j, i = Symbol.for("react.element"), n = Symbol.for("react.fragment"), c = Object.prototype.hasOwnProperty, h = a.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, m = { key: !0, ref: !0, __self: !0, __source: !0 };
   function p(o, e, u) {
     var t, d = {}, r = null, s = null;
@@ -29,8 +29,8 @@ function I() {
   return f.Fragment = n, f.jsx = p, f.jsxs = p, f;
 }
 k.exports = I();
-var l = k.exports, g = {}, R = w;
-g.createRoot = R.createRoot, g.hydrateRoot = R.hydrateRoot;
+var l = k.exports, g = {}, v = w;
+g.createRoot = v.createRoot, g.hydrateRoot = v.hydrateRoot;
 function C({
   avatarUrl: a,
   color: i = "#3b82f6",
@@ -154,4 +154,4 @@ class S extends HTMLElement {
     return i;
   }
 }
-customElements.define("storees-avatar", S);
+customElements.define("storees", S);

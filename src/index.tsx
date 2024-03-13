@@ -2,4 +2,4 @@
 
 import AvatarWebComponent from "./web-component";
 
-customElements.define("storees-avatar", AvatarWebComponent);
+customElements.define("storees", AvatarWebComponent);
