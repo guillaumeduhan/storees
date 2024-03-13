@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 export interface AvatarProps {
   avatarUrl?: string,
   color?: string,
@@ -17,6 +19,8 @@ function Avatar({
   status,
   small
 }: AvatarProps) {
+  const [animation, setAnimation] = useState(false);
+  const [show, setShow] = useState(true);
 
   const getInitials = () => {
     if (avatarUrl) return;
@@ -36,30 +40,88 @@ function Avatar({
     return small ? '36px' : '50px'
   }
 
+  useEffect(() => {
+    if (!show) {
+      setAnimation(false);
+    }
+  }, [show])
+
+  useEffect(() => {
+    if (animation) {
+      setTimeout(() => {
+        setShow(true);
+      }, 250)
+    }
+  }, [animation])
+
   return (
     <div style={{
-      background: !status ? '' : seen ? '#ccc' : gradient,
-      padding: '3px',
-      width: getSize(true),
-      height: getSize(true),
-      borderRadius: getSize(true),
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     }}>
-      <div style={{
-        backgroundImage: `url(${avatarUrl})`,
-        border: '2px solid white',
+      {show && <div style={{
+        zIndex: 10,
+        position: 'fixed',
+        top: 0,
+        left: 0,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white',
-        fontWeight: '700',
-        width: getSize(),
-        height: getSize(),
-        borderRadius: getSize(),
-        backgroundColor: color,
-        cursor: 'pointer',
-        backgroundSize: 'cover'
-      }} onClick={() => alert("hello")}>
-        {getInitials()}
+        width: "100%",
+        height: "100vh",
+        background: "black"
+      }}
+        onClick={() => setShow(false)}
+      >
+        <h1 style={{
+          color: "white",
+          textAlign: "center",
+        }}>
+          Hello this is a story
+        </h1>
+      </div>}
+      <div style={{
+        display: 'flex',
+        alignContent: 'center',
+        alignItems: 'center',
+        background: !status ? '' : seen ? '#ccc' : gradient,
+        padding: '3px',
+        width: getSize(true),
+        height: getSize(true),
+        borderRadius: getSize(true),
+      }}>
+        <div style={{
+          zIndex: animation ? 2 : -1,
+          position: "absolute",
+          width: getSize(true),
+          height: getSize(true),
+          background: "black",
+          borderRadius: "100px",
+        }}
+          onClick={() => setAnimation(!animation)}
+          className={animation ? "grow-fast" : ""}
+        />
+        <div style={{
+          zIndex: 1,
+          backgroundImage: `url(${avatarUrl})`,
+          border: '2px solid white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+          fontWeight: '700',
+          width: getSize(),
+          height: getSize(),
+          borderRadius: getSize(),
+          backgroundColor: color,
+          cursor: 'pointer',
+          backgroundSize: 'cover'
+        }}
+          onClick={() => setAnimation(!animation)}
+        >
+          {getInitials()}
+        </div>
       </div>
     </div>
   )

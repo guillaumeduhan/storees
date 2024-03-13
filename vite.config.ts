@@ -14,6 +14,14 @@ export default defineConfig({
       name: "avatar",
       fileName: (format) => `avatar.${format}.js`,
     },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React'
+        }
+      }
+    },
     target: "esnext",
   },
 })

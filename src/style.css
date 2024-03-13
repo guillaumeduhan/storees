@@ -1,0 +1,16 @@
+body {
+  margin: 0px;
+}
+
+.grow-fast {
+  animation: growFast 1000ms forwards;
+}
+
+@keyframes growFast {
+  0% {
+    scale: 0%;
+  }
+  100% {
+    scale: 10000%;
+  }
+}
