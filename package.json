@@ -1,7 +1,18 @@
 {
-  "name": "-storees",
-  "private": true,
-  "version": "0.0.0",
+  "name": "storees",
+  "private": false,
+  "version": "0.0.2",
+  "main": "./dist/storees.umd.js",
+  "module": "./dist/storees.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/storees.es.js",
+      "require": "./dist/storees.umd.js"
+    }
+  },
+  "files": [
+    "./dist"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000",
@@ -12,7 +23,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "storees": "^0.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
