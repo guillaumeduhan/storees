@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: "./src/index.tsx",
-      name: "avatar",
-      fileName: (format) => `avatar.${format}.js`,
+      name: "index",
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
